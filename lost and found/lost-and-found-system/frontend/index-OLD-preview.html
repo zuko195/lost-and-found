@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lost & Found System - Preview</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .feature-card {
+            transition: all 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        .screenshot {
+            border-radius: 12px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            transition: transform 0.3s ease;
+        }
+        .screenshot:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    
+    <!-- Hero Section -->
+    <section class="gradient-bg min-h-screen flex items-center justify-center px-4">
+        <div class="max-w-6xl mx-auto text-center text-white">
+            <div class="animate-float mb-8">
+                <i data-feather="box" class="h-24 w-24 mx-auto"></i>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold mb-6">
+                Lost & Found System
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 text-purple-100">
+                Complete Authentication • Mobile Responsive • Dark Mode • Image Upload
+            </p>
+            <p class="text-lg mb-12 text-purple-200">
+                A professional, production-ready lost and found management system<br>
+                for Jyothi Engineering College
+            </p>
+            
+            <!-- Feature Badges -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <span class="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm">
+                    ✅ Full Authentication
+                </span>
+                <span class="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm">
+                    🔒 Enterprise Security
+                </span>
+                <span class="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm">
+                    📱 Mobile Responsive
+                </span>
+                <span class="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm">
+                    🌙 Dark Mode
+                </span>
+                <span class="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm">
+                    📸 Image Upload
+                </span>
+            </div>
+
+            <!-- CTA Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="login.html" class="bg-white text-purple-600 px-8 py-4 rounded-lg font-semibold hover:bg-purple-50 transition-all transform hover:scale-105 shadow-lg">
+                    <i data-feather="log-in" class="inline h-5 w-5 mr-2"></i>
+                    Try Demo
+                </a>
+                <a href="#features" class="bg-white/10 backdrop-blur-sm border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/20 transition-all">
+                    <i data-feather="info" class="inline h-5 w-5 mr-2"></i>
+                    Learn More
+                </a>
+            </div>
+
+            <!-- Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 max-w-4xl mx-auto">
+                <div>
+                    <div class="text-4xl font-bold mb-2">30+</div>
+                    <div class="text-purple-200">Features</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold mb-2">10/10</div>
+                    <div class="text-purple-200">Security</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold mb-2">100%</div>
+                    <div class="text-purple-200">Responsive</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold mb-2">10</div>
+                    <div class="text-purple-200">Pages</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 px-4 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">
+                    <span class="gradient-text">Powerful Features</span>
+                </h2>
+                <p class="text-xl text-gray-600">Everything you need for a complete lost & found system</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="feature-card bg-white p-8 rounded-xl shadow-lg border-2 border-gray-100">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i data-feather="lock" class="h-8 w-8 text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Secure Authentication</h3>
+                    <p class="text-gray-600">Complete user authentication with JWT tokens, bcrypt password hashing, and role-based access control.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-card bg-white p-8 rounded-xl shadow-lg border-2 border-gray-100">
+                    <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i data-feather="shield" class="h-8 w-8 text-purple-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Enterprise Security</h3>
+                    <p class="text-gray-600">10/10 security rating with rate limiting, XSS protection, CSRF protection, and account lockout.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card bg-white p-8 rounded-xl shadow-lg border-2 border-gray-100">
+                    <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i data-feather="smartphone" class="h-8 w-8 text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Mobile Responsive</h3>
+                    <p class="text-gray-600">Fully responsive design that works perfectly on all devices - phones, tablets, and desktops.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="feature-card bg-white p-8 rounded-xl shadow-lg border-2 border-gray-100">
+                    <div class="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i data-feather="moon" class="h-8 w-8 text-indigo-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Dark Mode</h3>
+                    <p class="text-gray-600">Beautiful dark theme with smooth transitions and persistent user preferences.</p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="feature-card bg-white p-8 rounded-xl shadow-lg border-2 border-gray-100">
+                    <div class="bg-pink-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i data-feather="image" class="h-8 w-8 text-pink-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Image Upload</h3>
+                    <p class="text-gray-600">Drag & drop image upload with preview, compression, and paste from clipboard support.</p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="feature-card bg-white p-8 rounded-xl shadow-lg border-2 border-gray-100">
+                    <div class="bg-yellow-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i data-feather="users" class="h-8 w-8 text-yellow-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">User Management</h3>
+                    <p class="text-gray-600">Complete admin panel with user management, role assignment, and activity monitoring.</p>
+                </div>
+
+                <!-- Feature 7 -->
+                <div class="feature-card bg-white p-8 rounded-xl shadow-lg border-2 border-gray-100">
+                    <div class="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i data-feather="alert-circle" class="h-8 w-8 text-red-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Report Lost Items</h3>
+                    <p class="text-gray-600">Easy-to-use forms for reporting lost items with category, location, and date tracking.</p>
+                </div>
+
+                <!-- Feature 8 -->
+                <div class="feature-card bg-white p-8 rounded-xl shadow-lg border-2 border-gray-100">
+                    <div class="bg-teal-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i data-feather="check-circle" class="h-8 w-8 text-teal-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Report Found Items</h3>
+                    <p class="text-gray-600">Report found items with image upload and detailed descriptions to help owners identify.</p>
+                </div>
+
+                <!-- Feature 9 -->
+                <div class="feature-card bg-white p-8 rounded-xl shadow-lg border-2 border-gray-100">
+                    <div class="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i data-feather="search" class="h-8 w-8 text-orange-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Advanced Search</h3>
+                    <p class="text-gray-600">Search and filter items by category, date, location, and keywords to find items quickly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section class="py-20 px-4 bg-gray-50">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">
+                    <span class="gradient-text">Built With Modern Technology</span>
+                </h2>
+                <p class="text-xl text-gray-600">Professional tech stack for production deployment</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Frontend -->
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold mb-6 flex items-center">
+                        <i data-feather="monitor" class="h-6 w-6 mr-3 text-purple-600"></i>
+                        Frontend
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-purple-600 rounded-full mr-3"></span>
+                            HTML5 & CSS3
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-purple-600 rounded-full mr-3"></span>
+                            Tailwind CSS
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-purple-600 rounded-full mr-3"></span>
+                            JavaScript (ES6+)
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-purple-600 rounded-full mr-3"></span>
+                            Feather Icons
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-purple-600 rounded-full mr-3"></span>
+                            Responsive Design
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Backend -->
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold mb-6 flex items-center">
+                        <i data-feather="server" class="h-6 w-6 mr-3 text-purple-600"></i>
+                        Backend
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-purple-600 rounded-full mr-3"></span>
+                            Node.js & Express
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-purple-600 rounded-full mr-3"></span>
+                            SQLite Database
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-purple-600 rounded-full mr-3"></span>
+                            JWT Authentication
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-purple-600 rounded-full mr-3"></span>
+                            Bcrypt Encryption
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-purple-600 rounded-full mr-3"></span>
+                            Multer File Upload
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Security -->
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold mb-6 flex items-center">
+                        <i data-feather="shield" class="h-6 w-6 mr-3 text-purple-600"></i>
+                        Security
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span>
+                            Helmet.js Protection
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span>
+                            Rate Limiting
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span>
+                            XSS Protection
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span>
+                            CSRF Tokens
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span>
+                            Account Lockout
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Features -->
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold mb-6 flex items-center">
+                        <i data-feather="zap" class="h-6 w-6 mr-3 text-purple-600"></i>
+                        Features
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-blue-600 rounded-full mr-3"></span>
+                            Dark Mode Toggle
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-blue-600 rounded-full mr-3"></span>
+                            Image Upload & Preview
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-blue-600 rounded-full mr-3"></span>
+                            Mobile Responsive
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-blue-600 rounded-full mr-3"></span>
+                            Admin Dashboard
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-blue-600 rounded-full mr-3"></span>
+                            User Management
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admin Credentials Section -->
+    <section class="py-20 px-4 bg-purple-900 text-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="bg-white/10 backdrop-blur-sm p-8 rounded-xl border-2 border-white/20">
+                <i data-feather="key" class="h-16 w-16 mx-auto mb-6"></i>
+                <h2 class="text-3xl font-bold mb-6">Demo Admin Credentials</h2>
+                <div class="grid md:grid-cols-2 gap-6 text-left">
+                    <div class="bg-white/10 p-6 rounded-lg">
+                        <h3 class="font-semibold mb-3 text-purple-200">Admin Account 1</h3>
+                        <p class="mb-2"><strong>Email:</strong> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="8dfde5ecffe8e8fee5babcbacdeae0ece4e1a3eee2e0">[email&#160;protected]</a></p>
+                        <p><strong>Password:</strong> Admin@123</p>
+                    </div>
+                    <div class="bg-white/10 p-6 rounded-lg">
+                        <h3 class="font-semibold mb-3 text-purple-200">Admin Account 2</h3>
+                        <p class="mb-2"><strong>Email:</strong> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="feac9f889b909c9b9f8d8a9d8cc9be99939f9792d09d9193">[email&#160;protected]</a></p>
+                        <p><strong>Password:</strong> Admin@123</p>
+                    </div>
+                </div>
+                <p class="mt-6 text-purple-200 text-sm">⚠️ Change passwords after first login in production!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 px-4 bg-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-6">Ready to Deploy?</h2>
+            <p class="text-xl text-gray-600 mb-8">
+                Complete system ready for Render.com deployment in minutes
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="login.html" class="gradient-bg text-white px-8 py-4 rounded-lg font-semibold hover:opacity-90 transition-all transform hover:scale-105 shadow-lg">
+                    <i data-feather="play" class="inline h-5 w-5 mr-2"></i>
+                    Launch Demo
+                </a>
+                <a href="register.html" class="bg-gray-100 text-gray-900 px-8 py-4 rounded-lg font-semibold hover:bg-gray-200 transition-all">
+                    <i data-feather="user-plus" class="inline h-5 w-5 mr-2"></i>
+                    Create Account
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 px-4">
+        <div class="max-w-6xl mx-auto text-center">
+            <div class="mb-8">
+                <i data-feather="box" class="h-12 w-12 mx-auto mb-4"></i>
+                <h3 class="text-2xl font-bold mb-2">Lost & Found System</h3>
+                <p class="text-gray-400">Jyothi Engineering College</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h4 class="font-semibold mb-3">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="login.html" class="hover:text-white">Login</a></li>
+                        <li><a href="register.html" class="hover:text-white">Register</a></li>
+                        <li><a href="lost-items.html" class="hover:text-white">Browse Lost Items</a></li>
+                        <li><a href="unclaimed.html" class="hover:text-white">Unclaimed Items</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-3">Features</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>Authentication System</li>
+                        <li>Enterprise Security</li>
+                        <li>Mobile Responsive</li>
+                        <li>Dark Mode</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-3">Stats</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>30+ Features</li>
+                        <li>10/10 Security</li>
+                        <li>10 Pages</li>
+                        <li>100% Responsive</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8">
+                <p class="text-gray-400">
+                    © 2024 Lost & Found System. Built with ❤️ for Jyothi Engineering College
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        feather.replace();
+        
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(ancho

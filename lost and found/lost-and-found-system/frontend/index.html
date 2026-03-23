@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lost & Found - Jyothi Engineering College</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <!-- Dark Mode & Responsive Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-gray-50">
+    
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <i data-feather="box" class="h-8 w-8 text-indigo-600"></i>
+                    <span class="ml-2 text-xl font-bold text-gray-900">Lost & Found</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="login.html" class="text-gray-700 hover:text-indigo-600">Login</a>
+                    <a href="register.html" class="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700">Register</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <i data-feather="box" class="h-20 w-20 mx-auto mb-6"></i>
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">Lost & Found System</h1>
+            <p class="text-xl md:text-2xl mb-8">Jyothi Engineering College</p>
+            <p class="text-lg mb-10 max-w-2xl mx-auto">
+                These items were recently found on campus. Check if any belong to you!
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="unclaimed.html" class="bg-white text-indigo-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-all">
+                    <i data-feather="search" class="inline h-5 w-5 mr-2"></i>
+                    View All Unclaimed Items
+                </a>
+                <a href="report-found.html" class="bg-indigo-800 text-white px-8 py-3 rounded-lg font-semibold hover:bg-indigo-900 transition-all">
+                    <i data-feather="plus-circle" class="inline h-5 w-5 mr-2"></i>
+                    Report Found Item
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent Found Items Section -->
+    <section class="py-16 px-4">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Recently Found Items</h2>
+            <p class="text-center text-gray-600 mb-12">These items are waiting to be claimed</p>
+            
+            <!-- Items Grid - Will be populated dynamically -->
+            <div id="recentItems" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Loading state -->
+                <div class="col-span-full text-center py-12">
+                    <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600 mx-auto mb-4"></div>
+                    <p class="text-gray-600">Loading recent items...</p>
+                </div>
+            </div>
+
+            <!-- No items message (hidden by default) -->
+            <div id="noItems" class="hidden col-span-full text-center py-12">
+                <i data-feather="inbox" class="h-16 w-16 mx-auto text-gray-400 mb-4"></i>
+                <h3 class="text-xl font-semibold text-gray-700 mb-2">No items yet</h3>
+                <p class="text-gray-600 mb-6">Be the first to report a found item!</p>
+                <a href="report-found.html" class="inline-block bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700">
+                    Report Found Item
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Actions -->
+    <section class="bg-gray-100 py-16 px-4">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">Quick Links</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Report Lost -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all">
+                    <div class="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i data-feather="alert-circle" class="h-8 w-8 text-red-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Report Lost Item</h3>
+                    <p class="text-gray-600 mb-4">Lost something? Report it here and we'll help you find it.</p>
+                    <a href="report-lost.html" class="text-indigo-600 font-semibold hover:text-indigo-800">
+                        Report Now →
+                    </a>
+                </div>
+
+                <!-- Browse Lost -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i data-feather="search" class="h-8 w-8 text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Browse Lost Items</h3>
+                    <p class="text-gray-600 mb-4">Found something? Check if someone reported it as lost.</p>
+                    <a href="lost-items.html" class="text-indigo-600 font-semibold hover:text-indigo-800">
+                        Browse Now →
+                    </a>
+                </div>
+
+                <!-- Report Found -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all">
+                    <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i data-feather="check-circle" class="h-8 w-8 text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Report Found Item</h3>
+                    <p class="text-gray-600 mb-4">Found an item? Report it to help return it to the owner.</p>
+                    <a href="report-found.html" class="text-indigo-600 font-semibold hover:text-indigo-800">
+                        Report Now →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <!-- Brand -->
+                <div>
+                    <div class="flex items-center mb-4">
+                        <i data-feather="box" class="h-8 w-8 text-indigo-400"></i>
+                        <span class="ml-2 text-xl font-bold">Lost & Found</span>
+                    </div>
+                    <p class="text-gray-400">Jyothi Engineering College</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="login.html" class="hover:text-white">Login</a></li>
+                        <li><a href="register.html" class="hover:text-white">Register</a></li>
+                        <li><a href="report-lost.html" class="hover:text-white">Report Lost</a></li>
+                        <li><a href="report-found.html" class="hover:text-white">Report Found</a></li>
+                        <li><a href="lost-items.html" class="hover:text-white">Browse Lost Items</a></li>
+                        <li><a href="unclaimed.html" class="hover:text-white">Unclaimed Items</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h3 class="font-semibold mb-4">Contact</h3>
+                    <p class="text-gray-400">
+                        Jyothi Engineering College<br>
+                        Thrissur, Kerala<br>
+                        India
+                    </p>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>© 2024 Lost and Found System. Developed by Zuko.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        feather.replace();
+
+        // Fetch and display recent found items
+        async function loadRecentItems() {
+            try {
+                const response = await fetch('http://localhost:3000/api/found-items');
+                const items = await response.json();
+
+                const container = document.getElementById('recentItems');
+                const noItemsMsg = document.getElementById('noItems');
+
+                if (items && items.length > 0) {
+                    // Show only the 6 most recent items
+                    const recentItems = items.slice(0, 6);
+                    
+                    container.innerHTML = recentItems.map(item => `
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all">
+                            ${item.image_url ? `
+                                <img src="${item.image_url}" alt="${item.item_name}" class="w-full h-48 object-cover">
+                            ` : `
+                                <div class="w-full h-48 bg-gradient-to-br from-indigo-100 to-purple-100 flex items-center justify-center">
+                                    <i data-feather="package" class="h-16 w-16 text-indigo-400"></i>
+                                </div>
+                            `}
+                            <div class="p-6">
+                                <div class="flex items-center justify-between mb-2">
+                                    <h3 class="text-xl font-bold text-gray-900">${item.item_name}</h3>
+                                    <span class="text-sm px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full">${item.category || 'Other'}</span>
+                                </div>
+                                <p class="text-gray-600 text-sm mb-4">${item.description ? item.description.substring(0, 100) + '...' : 'No description'}</p>
+                                <div class="flex items-center text-sm text-gray-500 mb-4">
+                                    <i data-feather="map-pin" class="h-4 w-4 mr-2"></i>
+                                    <span>${item.location_found || 'Unknown location'}</span>
+                                </div>
+                                <div class="flex items-center text-sm text-gray-500 mb-4">
+                                    <i data-feather="calendar" class="h-4 w-4 mr-2"></i>
+                                    <span>Found ${new Date(item.date_found).toLocaleDateString()}</span>
+                                </div>
+                                <a href="unclaimed.html" class="block text-center bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-all">
+                                    View Details
+                                </a>
+                            </div>
+                        </div>
+                    `).join('');
+                    
+                    // Re-initialize feather icons for dynamically added content
+                    feather.replace();
+                } else {
+                    container.innerHTML = '';
+                    noItemsMsg.classList.remove('hidden');
+                    feather.replace();
+                }
+            } catch (error) {
+                console.error('Error loading items:', error);
+                document.getElementById('recentItems').innerHTML = `
+                    <div class="col-span-full text-center py-12">
+                        <i data-feather="wifi-off" class="h-16 w-16 mx-auto text-gray-400 mb-4"></i>
+                        <h3 class="text-xl font-semibold text-gray-700 mb-2">Unable to load items</h3>
+                        <p class="text-gray-600 mb-6">Please check your connection and try again.</p>
+                        <button onclick="loadRecentItems()" class="inline-block bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700">
+                            Retry
+                        </button>
+                    </div>
+                `;
+                feather.replace();
+            }
+        }
+
+        // Load items when page loads
+        document.addEventListener('DOMContentLoaded', loadRecentItems);
+    </script>
+    <!-- Dark Mode, Image Upload & Utilities -->
+    <script src="js/utils.js"></script>
+</body>
+</html>
