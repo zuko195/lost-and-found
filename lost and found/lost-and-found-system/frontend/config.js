@@ -28,7 +28,7 @@ function getApiUrl() {
     }
     
     // Development (localhost)
-    return 'http://localhost:3000/api';
+    return 'https://lost-and-found-1-1zfg.onrender.com/api';
 }
 
 // Export for use in HTML files
