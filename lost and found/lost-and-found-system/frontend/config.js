@@ -21,13 +21,16 @@ function getApiUrl() {
     // Check if we're on Render.com
     const hostname = window.location.hostname;
     
-    // Production (Render.com)
+   // Automatically detect the correct API URL
+function getApiUrl() {
+    const hostname = window.location.hostname;
+
+    // Production (Render frontend)
     if (hostname.includes('onrender.com')) {
-        // IMPORTANT: Update this URL after deploying your backend to Render
-        return 'https://lost-found-backend.onrender.com/api';
+        return 'https://lost-and-found-1-1zfg.onrender.com/api';
     }
-    
-    // Development (localhost)
+
+    // Local development
     return 'https://lost-and-found-1-1zfg.onrender.com/api';
 }
 
