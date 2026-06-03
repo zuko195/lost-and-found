@@ -813,7 +813,7 @@ app.get('/api/my-items', authenticateToken, (req, res) => {
     });
 });
 // TEMP: Create admin user (REMOVE AFTER USE)
-app.get('/api/create-admin', async (req, res) => {
+app.post('/api/create-admin', async (req, res) => {
     const bcrypt = require('bcryptjs');
 
     const password = await bcrypt.hash('Admin@123', 10);
