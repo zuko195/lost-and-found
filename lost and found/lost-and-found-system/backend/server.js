@@ -56,7 +56,9 @@ app.use(session({
 app.use(express.static(path.join(__dirname, '../frontend')));
 
 // Database connection
-const db = new sqlite3.Database('./database/lost_and_found.db', (err) => {
+const DB_PATH = path.join(__dirname, 'lost_and_found.db');
+
+const db = new sqlite3.Database(DB_PATH, (err) => {
     if (err) {
         console.error('Error opening database:', err.message);
     } else {
