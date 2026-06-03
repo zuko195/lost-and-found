@@ -19,23 +19,19 @@ const SESSION_SECRET = process.env.SESSION_SECRET || 'session-secret-change-this
 const allowedOrigins = [
     'http://localhost:8000',
     'http://127.0.0.1:8000',
-    process.env.FRONTEND_URL,
-    /\.onrender\.com$/  // Allow all Render subdomains
+    process.env.FRONTEND_URL
 ];
 
-// Middleware
 app.use(cors({
     origin: function(origin, callback) {
-        // Allow requests with no origin (like mobile apps or curl requests)
         if (!origin) return callback(null, true);
-        
-        if (allowedOrigins.some(allowed => {
-            if (allowed instanceof RegExp) return allowed.test(origin);
-            return allowed === origin;
-        })) {
+
+        console.log('Request Origin:', origin);
+
+        if (allowedOrigins.includes(origin)) {
             callback(null, true);
         } else {
-            callback(new Error('Not allowed by CORS'));
+            callback(null, true); // temporary for testing
         }
     },
     credentials: true
