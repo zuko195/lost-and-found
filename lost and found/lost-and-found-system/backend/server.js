@@ -812,7 +812,25 @@ app.get('/api/my-items', authenticateToken, (req, res) => {
         });
     });
 });
+// TEMP: Create admin user (REMOVE AFTER USE)
+app.get('/api/create-admin', async (req, res) => {
+    const bcrypt = require('bcryptjs');
 
+    const password = await bcrypt.hash('Admin@123', 10);
+
+    db.run(`
+        INSERT INTO users (full_name, email, student_id, phone, password_hash, role, login_method, is_verified, is_active)
+        VALUES (?, ?, ?, ?, ?, 'admin', 'email', 1, 1)
+    `, [
+        'Admin User',
+        'admin@gmail.com',
+        'ADMIN001',
+        '9999999999',
+        password
+    ]);
+
+    res.json({ message: 'Admin created successfully' });
+});
 // Health check
 app.get('/api/health', (req, res) => {
     res.json({ status: 'OK', message: 'Server is running with authentication' });
