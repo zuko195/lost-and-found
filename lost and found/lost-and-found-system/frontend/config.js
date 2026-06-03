@@ -26,9 +26,9 @@ function getApiUrl() {
     const hostname = window.location.hostname;
 
     // Production (Render frontend)
-    if (hostname.includes('onrender.com')) {
-        return 'https://lost-and-found-1-1zfg.onrender.com/api';
-    }
+  if (hostname.includes('onrender.com')) {
+    return 'https://lost-and-found-1-1zfg.onrender.com/api';
+}
 
     // Local development
     return 'https://lost-and-found-1-1zfg.onrender.com/api';
